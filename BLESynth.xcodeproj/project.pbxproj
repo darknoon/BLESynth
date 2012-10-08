@@ -26,6 +26,14 @@
 		49FBECB3162268F400B2920F /* BLESListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBECB2162268F400B2920F /* BLESListener.m */; };
 		49FBECB616226DB200B2920F /* BLESBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBECB516226DB200B2920F /* BLESBroadcaster.m */; };
 		49FBECBC1622B30F00B2920F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBECBB1622B30F00B2920F /* AVFoundation.framework */; };
+		49FBECC91623827400B2920F /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECBF1623827400B2920F /* Icon-72.png */; };
+		49FBECCA1623827400B2920F /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC01623827400B2920F /* Icon-72@2x.png */; };
+		49FBECCB1623827400B2920F /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC11623827400B2920F /* Icon-Small-50.png */; };
+		49FBECCC1623827400B2920F /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC21623827400B2920F /* Icon-Small-50@2x.png */; };
+		49FBECCD1623827400B2920F /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC31623827400B2920F /* Icon-Small.png */; };
+		49FBECCE1623827400B2920F /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC41623827400B2920F /* Icon-Small@2x.png */; };
+		49FBECCF1623827400B2920F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC51623827400B2920F /* Icon.png */; };
+		49FBECD01623827400B2920F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBECC61623827400B2920F /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +65,14 @@
 		49FBECB416226DB200B2920F /* BLESBroadcaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLESBroadcaster.h; sourceTree = "<group>"; };
 		49FBECB516226DB200B2920F /* BLESBroadcaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLESBroadcaster.m; sourceTree = "<group>"; };
 		49FBECBB1622B30F00B2920F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		49FBECBF1623827400B2920F /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		49FBECC01623827400B2920F /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		49FBECC11623827400B2920F /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		49FBECC21623827400B2920F /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		49FBECC31623827400B2920F /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		49FBECC41623827400B2920F /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		49FBECC51623827400B2920F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		49FBECC61623827400B2920F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				49FBEC7D1622611700B2920F /* BLESynth */,
+				49FBECBE1623827400B2920F /* App Icon [Squared] */,
 				49FBEC761622611700B2920F /* Frameworks */,
 				49FBEC741622611700B2920F /* Products */,
 			);
@@ -143,6 +160,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		49FBECBE1623827400B2920F /* App Icon [Squared] */ = {
+			isa = PBXGroup;
+			children = (
+				49FBECBF1623827400B2920F /* Icon-72.png */,
+				49FBECC01623827400B2920F /* Icon-72@2x.png */,
+				49FBECC11623827400B2920F /* Icon-Small-50.png */,
+				49FBECC21623827400B2920F /* Icon-Small-50@2x.png */,
+				49FBECC31623827400B2920F /* Icon-Small.png */,
+				49FBECC41623827400B2920F /* Icon-Small@2x.png */,
+				49FBECC51623827400B2920F /* Icon.png */,
+				49FBECC61623827400B2920F /* Icon@2x.png */,
+			);
+			path = "App Icon [Squared]";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,6 +233,14 @@
 				49FBEC8E1622611700B2920F /* Default-568h@2x.png in Resources */,
 				49FBEC911622611700B2920F /* MainStoryboard_iPhone.storyboard in Resources */,
 				49FBEC941622611700B2920F /* MainStoryboard_iPad.storyboard in Resources */,
+				49FBECC91623827400B2920F /* Icon-72.png in Resources */,
+				49FBECCA1623827400B2920F /* Icon-72@2x.png in Resources */,
+				49FBECCB1623827400B2920F /* Icon-Small-50.png in Resources */,
+				49FBECCC1623827400B2920F /* Icon-Small-50@2x.png in Resources */,
+				49FBECCD1623827400B2920F /* Icon-Small.png in Resources */,
+				49FBECCE1623827400B2920F /* Icon-Small@2x.png in Resources */,
+				49FBECCF1623827400B2920F /* Icon.png in Resources */,
+				49FBECD01623827400B2920F /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
