@@ -20,7 +20,7 @@
 		49FBEC941622611700B2920F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FBEC921622611700B2920F /* MainStoryboard_iPad.storyboard */; };
 		49FBEC971622611700B2920F /* BLESViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBEC961622611700B2920F /* BLESViewController.m */; };
 		49FBEC9E1622612B00B2920F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBEC9D1622612B00B2920F /* CoreBluetooth.framework */; };
-		49FBECA11622618900B2920F /* BLESSynth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49FBECA01622618900B2920F /* BLESSynth.mm */; };
+		49FBECA11622618900B2920F /* BLESSynth.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBECA01622618900B2920F /* BLESSynth.m */; };
 		49FBECA5162261BA00B2920F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBECA3162261BA00B2920F /* CoreAudio.framework */; };
 		49FBECA8162261DB00B2920F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBECA6162261DB00B2920F /* AudioToolbox.framework */; };
 		49FBECB3162268F400B2920F /* BLESListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBECB2162268F400B2920F /* BLESListener.m */; };
@@ -48,7 +48,7 @@
 		49FBEC961622611700B2920F /* BLESViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLESViewController.m; sourceTree = "<group>"; };
 		49FBEC9D1622612B00B2920F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		49FBEC9F1622618900B2920F /* BLESSynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLESSynth.h; sourceTree = "<group>"; };
-		49FBECA01622618900B2920F /* BLESSynth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BLESSynth.mm; sourceTree = "<group>"; };
+		49FBECA01622618900B2920F /* BLESSynth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLESSynth.m; sourceTree = "<group>"; };
 		49FBECA3162261BA00B2920F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		49FBECA6162261DB00B2920F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		49FBECA7162261DB00B2920F /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -119,7 +119,7 @@
 				49FBEC951622611700B2920F /* BLESViewController.h */,
 				49FBEC961622611700B2920F /* BLESViewController.m */,
 				49FBEC9F1622618900B2920F /* BLESSynth.h */,
-				49FBECA01622618900B2920F /* BLESSynth.mm */,
+				49FBECA01622618900B2920F /* BLESSynth.m */,
 				49FBECB1162268F400B2920F /* BLESListener.h */,
 				49FBECB2162268F400B2920F /* BLESListener.m */,
 				49FBECB416226DB200B2920F /* BLESBroadcaster.h */,
@@ -214,7 +214,7 @@
 				49FBEC841622611700B2920F /* main.m in Sources */,
 				49FBEC881622611700B2920F /* BLESAppDelegate.m in Sources */,
 				49FBEC971622611700B2920F /* BLESViewController.m in Sources */,
-				49FBECA11622618900B2920F /* BLESSynth.mm in Sources */,
+				49FBECA11622618900B2920F /* BLESSynth.m in Sources */,
 				49FBECB3162268F400B2920F /* BLESListener.m in Sources */,
 				49FBECB616226DB200B2920F /* BLESBroadcaster.m in Sources */,
 			);

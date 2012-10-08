@@ -10,10 +10,6 @@
 
 #import <AVFoundation/AVAudioSession.h>
 #include <AudioUnit/AudioUnit.h>
-#include <vector>
-#include <iostream>
-
-using namespace std;
 
 #define kOutputBus 0
 #define kInputBus 1
@@ -62,7 +58,7 @@ static OSStatus playbackCallback(void *inRefCon,
 								 AudioBufferList *ioData)
 {	
 	if (!ioData) {
-		return 1;
+		return 1; //TODO: what should we return in this case? What could trigger this?
 	}
 	
 	for (int bufferIndex=0; bufferIndex < ioData->mNumberBuffers; bufferIndex++) {
@@ -102,65 +98,55 @@ static OSStatus playbackCallback(void *inRefCon,
 - (void)start
 {
 	OSStatus status;
-	AudioComponentInstance audioUnit;
+	AudioComponentInstance audioUnit = NULL;
+		
+	// Get audio component
+	AudioComponent inputComponent = AudioComponentFindNext(NULL, &(AudioComponentDescription){
+		.componentType = kAudioUnitType_Output,
+		.componentSubType = kAudioUnitSubType_RemoteIO,
+		.componentFlags = 0,
+		.componentFlagsMask = 0,
+		.componentManufacturer = kAudioUnitManufacturer_Apple,
+	});
 	
-	// Describe audio component
-	AudioComponentDescription desc;
-	desc.componentType = kAudioUnitType_Output;
-	desc.componentSubType = kAudioUnitSubType_RemoteIO;
-	desc.componentFlags = 0;
-	desc.componentFlagsMask = 0;
-	desc.componentManufacturer = kAudioUnitManufacturer_Apple;
-	
-	// Get component
-	AudioComponent inputComponent = AudioComponentFindNext(NULL, &desc);
-	
-	// Get audio units
+	// Create a new instance of the RemoteIO component
 	status = AudioComponentInstanceNew(inputComponent, &audioUnit);
-	//checkStatus(status);
 	
-	UInt32 flag = 1;
 	// Enable IO for playback
 	status = AudioUnitSetProperty(audioUnit,
 								  kAudioOutputUnitProperty_EnableIO,
 								  kAudioUnitScope_Output,
 								  kOutputBus,
-								  &flag,
-								  sizeof(flag));
-	//checkStatus(status);
+								  &(UInt32){1},
+								  sizeof(UInt32));
 	
 	// Describe format
-	
-	AudioStreamBasicDescription audioFormat;
-	audioFormat.mSampleRate = SAMPLE_RATE;
-	audioFormat.mFormatID	= kAudioFormatLinearPCM;
-	audioFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
-	audioFormat.mFramesPerPacket = 1;
-	audioFormat.mChannelsPerFrame = 2;
-	audioFormat.mBitsPerChannel = 16;
-	audioFormat.mBytesPerPacket = 4;
-	audioFormat.mBytesPerFrame = 4;
-	
-	// Apply format
-	
 	status = AudioUnitSetProperty(audioUnit,
 								  kAudioUnitProperty_StreamFormat,
 								  kAudioUnitScope_Input,
 								  kOutputBus,
-								  &audioFormat,
-								  sizeof(audioFormat));
-	//  checkStatus(status);
+								  &(const AudioStreamBasicDescription){
+									  .mSampleRate = SAMPLE_RATE,
+									  .mFormatID	= kAudioFormatLinearPCM,
+									  .mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked,
+									  .mFramesPerPacket = 1,
+									  .mChannelsPerFrame = 2,
+									  .mBitsPerChannel = 16,
+									  .mBytesPerPacket = 4,
+									  .mBytesPerFrame = 4,
+								  },
+								  sizeof(AudioStreamBasicDescription));
 	
 	// Set output callback
-	AURenderCallbackStruct callbackStruct;
-	callbackStruct.inputProc = playbackCallback;
-	callbackStruct.inputProcRefCon = (__bridge void *)self;
 	status = AudioUnitSetProperty(audioUnit,
 								  kAudioUnitProperty_SetRenderCallback,
 								  kAudioUnitScope_Global,
 								  kOutputBus,
-								  &callbackStruct,
-								  sizeof(callbackStruct));
+								  &(AURenderCallbackStruct){
+									  .inputProc = playbackCallback,
+									  .inputProcRefCon =(__bridge void *)self,
+								  },
+								  sizeof(AURenderCallbackStruct));
 	
 	// Initialize
 	status = AudioUnitInitialize(audioUnit);
